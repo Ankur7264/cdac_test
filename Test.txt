@@ -1,0 +1,23 @@
+helloWorld.java
+
+class helloWorld {
+  public static void main (String [] args)
+  {
+    System.out.println ("Hello World... ");
+  }
+}
+
+
+
+
+Dockerfile
+
+From openjdk:17-jdk-slim  //docker file setup and take jdk 
+
+WORKDIR /app  
+
+COPY . .
+
+RUN javac helloWorld.java 
+
+CMD [ "java" , "helloWorld"]
